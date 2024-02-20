@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+    <div class="limit-width" #asBoxInput>
+        <input
+        class="input-src"
+        [ngClass]="{'loading':isLoading}"
+        [spellcheck]="false"
+        placeholder="Agremiados"
+        type="text"
+        (ngModelChange)="search($event)"
+        [(ngModel)]="src">
+        <form (submit)="guardarAgremiado">
+            <div class="results">
+                <ul>
+                    <li *ngFor="let agremiado of data$ | async" >
+                        <div>
+                            <input class="form-check-input" type="radio" name="{{agremiado.dni}}" id="{{agremiado.dni}}" value="{{agremiado.dni}}" [(ngModel)]="agremiado1" checked required>                 
+                            <label class="form-check-label">{{agremiado.nombre}} {{agremiado.apellido}} {{agremiado.dni}}</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button>Cancelar</button><button (click)="agremiar()" type="submit">Aceptar</button>
+        </form>
+
+        <button routerLink="/nuevoAgremiado">Nuevo agremiado</button>
+    </div>
+</div>

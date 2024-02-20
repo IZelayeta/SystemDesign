@@ -1,0 +1,17 @@
+<p>Nueva agremiacion</p>
+<p>fecha de alta: <strong>{{ fecha | date:'yyyy-MM-dd'}}</strong></p>
+<p>Codigo: <strong> {{codigo}}</strong></p>
+
+<p>Cuotas: <strong>{{cantCuotas}}</strong></p>
+
+<app-buscar></app-buscar>
+
+<!-- Cargar archivo -->
+<div>
+    <input (change)="capturarFile($event)" type="file" name="" id="">
+</div>
+
+<!-- Preview -->
+<div>
+    <img src="archivos[0]" alt="">
+</div>
