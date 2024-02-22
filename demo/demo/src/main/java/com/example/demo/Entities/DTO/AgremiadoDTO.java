@@ -18,6 +18,9 @@ public class AgremiadoDTO {
     private List<ObraSocial> obraSocials;
     private List<Consultorio> consultorios;
 
+
+    public AgremiadoDTO(){}
+    
     public AgremiadoDTO(String apellido, Integer dni, String email, String nombre, String telefono, List<ObraSocial> obraSocials, List<Consultorio> consultorios) {
         this.apellido = apellido;
         this.dni = dni;
