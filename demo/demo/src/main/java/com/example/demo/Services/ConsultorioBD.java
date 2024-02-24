@@ -26,8 +26,9 @@ public class ConsultorioBD {
     @Autowired
     IProvinciaRepository provinciaRepository;
 
-    public List<Consultorio> listarConsultorios(){
-        return (List<Consultorio>) this.consultorioRepository.findAll();
+    public Consultorio buscarConsultorio(String calle, String numero, String localidad){
+        Localidad localidad2 = localidadRepository.findByNombre(localidad); 
+        return this.consultorioRepository.findByCalleAndNumeroAndLocalidad(calle, numero, localidad2);
     }
 
     public List<Consultorio> buscarConsultorios(List<Consultorio> consultorios){

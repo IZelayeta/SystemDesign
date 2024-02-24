@@ -20,8 +20,8 @@ public class ConsultorioController {
 
     public ConsultorioController(){}
 
-    @GetMapping("/listarConsultorios")
-    public ResponseEntity<List<Consultorio>> listarConsultorio(){
-        return ResponseEntity.ok(consultorioBD.listarConsultorios());
+    @GetMapping("/buscarConsultorio")
+    public ResponseEntity<Consultorio> buscarConsultorio(String calle, String numero, String localidad ){
+        return ResponseEntity.ok(consultorioBD.buscarConsultorio(calle, numero, localidad));
     }
 }
